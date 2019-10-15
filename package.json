@@ -1,0 +1,23 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "url shortening service, built using Angular, Node, Express and MySQL.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asciiAvenger/url-shortener.git"
+  },
+  "author": "Philipp Alber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asciiAvenger/url-shortener/issues"
+  },
+  "homepage": "https://github.com/asciiAvenger/url-shortener#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  }
+}
