@@ -2,3 +2,16 @@ a {
     color: white;
     text-decoration: none;
 }
+
+.nav-title a {
+    font-size: 2rem;
+}
+
+.nav-menu a {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+mat-icon {
+    margin-right: .5rem;
+}

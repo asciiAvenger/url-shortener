@@ -1,11 +1,9 @@
 <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
-    <div>
-        <a routerLink="/">Home</a>
+    <div class="nav-title">
+        <a routerLink="/" fxLayout="row" fxLayoutAlign="center center"><mat-icon>link</mat-icon> url-shortener</a>
     </div>
-    <div>
-        <a href="https://github.com/asciiAvenger/url-shortener">
-            <mat-icon>code</mat-icon>
-            Github
-        </a>
+    <div class="nav-menu" fxLayout="row">
+        <a href="https://github.com/asciiAvenger/url-shortener" target="_blank" fxLayout="row" fxLayoutAlign="center center"><mat-icon>code</mat-icon> Github</a>
+        <a routerLink="/about" fxLayout="row" fxLayoutAlign="center center"><mat-icon>info</mat-icon> About & Creator</a>
     </div>
 </mat-toolbar>
