@@ -1,6 +1,6 @@
 a {
-    color: white;
     text-decoration: none;
+    color: white;
 }
 
 .nav-title a {
@@ -8,10 +8,58 @@ a {
 }
 
 .nav-menu a {
-    margin-left: 1rem;
     font-size: 1.2rem;
 }
 
-mat-icon {
+.nav-menu mat-icon, .nav-title mat-icon, .sidenav mat-icon {
     margin-right: .5rem;
+}
+
+mat-toolbar mat-divider {
+    background-color: white;
+    margin: 0 1rem;
+}
+
+.menu-button {
+    display: none;
+}
+
+.sidenav {
+    display: none;
+    z-index: 5;
+    position: fixed;
+    width: 250px;
+    height: calc(100vh - 56px);
+    padding: 2rem 0;
+    background-color: black;
+    top: 56px;
+    right: -250px;
+    transition: right .5s ease-in-out;
+}
+
+.sidenav.active {
+    right: 0;
+}
+
+.sidenav a {
+    font-size: 1.2rem;
+}
+
+.sidenav mat-divider {
+    background-color: white;
+    margin: 1rem 0;
+}
+
+@media screen and (max-width: 780px) {
+    .nav-menu {
+        display: none !important;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .sidenav {
+        display: block;
+    }
 }

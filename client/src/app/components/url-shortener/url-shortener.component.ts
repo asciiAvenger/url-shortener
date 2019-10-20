@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Url } from '../../models/url';
 
 @Component({
   selector: 'app-url-shortener',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UrlShortenerComponent implements OnInit {
 
+  timeoutNumbers: number[] = [];
+
+  model = new Url();
+
   constructor() { }
 
   ngOnInit() {
+    for (let i = 1; i <= 15; i++) {
+      this.timeoutNumbers.push(i);
+    }
+  }
+
+  onSubmit() {
+
   }
 
 }

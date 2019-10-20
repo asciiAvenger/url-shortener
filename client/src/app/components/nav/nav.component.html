@@ -1,9 +1,36 @@
 <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
     <div class="nav-title">
-        <a routerLink="/" fxLayout="row" fxLayoutAlign="center center"><mat-icon>link</mat-icon> url-shortener</a>
+        <a routerLink="/" fxLayout="row" fxLayoutAlign="center center">
+            <mat-icon>link</mat-icon> url-shortener
+        </a>
     </div>
     <div class="nav-menu" fxLayout="row">
-        <a href="https://github.com/asciiAvenger/url-shortener" target="_blank" fxLayout="row" fxLayoutAlign="center center"><mat-icon>code</mat-icon> Github</a>
-        <a routerLink="/about" fxLayout="row" fxLayoutAlign="center center"><mat-icon>info</mat-icon> About & Creator</a>
+        <a href="https://github.com/asciiAvenger/url-shortener" target="_blank" fxLayout="row"
+            fxLayoutAlign="center center">
+            <mat-icon>code</mat-icon> Github
+        </a>
+        <mat-divider [vertical]="true"></mat-divider>
+        <a routerLink="/about" fxLayout="row" fxLayoutAlign="center center">
+            <mat-icon>info</mat-icon> About & Creator
+        </a>
     </div>
+    <button class="menu-button" mat-flat-button color="primary" (click)="toggleSidenav()">
+        <mat-icon>menu</mat-icon>
+    </button>
 </mat-toolbar>
+
+<nav #sidenav class="sidenav" [ngClass]="sidenavActive ? 'active' : ''">
+    <a routerLink="/shorten" fxLayout="row" fxLayoutAlign="center center"
+        (click)="toggleSidenav()">
+        <mat-icon>link</mat-icon> Shorten
+    </a>
+    <mat-divider></mat-divider>
+    <a href="https://github.com/asciiAvenger/url-shortener" target="_blank" fxLayout="row" fxLayoutAlign="center center"
+        (click)="toggleSidenav()">
+        <mat-icon>code</mat-icon> Github
+    </a>
+    <mat-divider></mat-divider>
+    <a routerLink="/about" fxLayout="row" fxLayoutAlign="center center" (click)="toggleSidenav()">
+        <mat-icon>info</mat-icon> About & Creator
+    </a>
+</nav>
