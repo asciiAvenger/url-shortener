@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Url } from '../../models/url';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-url-shortener',
@@ -9,8 +10,12 @@ import { Url } from '../../models/url';
 export class UrlShortenerComponent implements OnInit {
 
   timeoutNumbers: number[] = [];
-
   model = new Url();
+  urlForm: FormGroup = new FormGroup({
+    url: new FormControl('', Validators.pattern('.+\\..{2,}')),
+    timeout: new FormControl(),
+    message: new FormControl()
+  });
 
   constructor() { }
 

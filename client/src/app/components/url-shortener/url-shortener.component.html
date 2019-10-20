@@ -5,29 +5,29 @@
     <mat-card-subtitle>Create your new shortened URL here!</mat-card-subtitle>
 
     <mat-card-content>
-        <form #shortenerForm="ngForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="urlForm" (ngSubmit)="onSubmit()">
 
             <div fxLayout="column">
                 <mat-form-field>
                     <mat-label>Your URL</mat-label>
-                    <input [(ngModel)]="model.url" type="text" name="url" matInput required>
+                    <input formControlName="url" type="text" name="url" matInput required>
+                    <mat-error>Please enter a valid URL</mat-error>
                 </mat-form-field>
 
                 <mat-form-field>
                     <mat-label>Redirect timeout</mat-label>
-                    <mat-select [(ngModel)]="model.timeout" name="timeout" required>
+                    <mat-select formControlName="timeout" name="timeout" required>
                         <mat-option *ngFor="let num of timeoutNumbers" value="{{ num }}">{{ num }}</mat-option>
                     </mat-select>
                 </mat-form-field>
 
                 <mat-form-field>
                     <mat-label>Your message</mat-label>
-                    <textarea [(ngModel)]="model.message" name="message" rows="3" matInput></textarea>
+                    <textarea formControlName="message" name="message" rows="3" matInput></textarea>
                 </mat-form-field>
             </div>
 
-            <button mat-raised-button type="submit" [disabled]="!shortenerForm.form.valid"
-                color="primary">Submit</button>
+            <button mat-raised-button type="submit" [disabled]="!urlForm.valid" color="primary">Submit</button>
 
         </form>
     </mat-card-content>

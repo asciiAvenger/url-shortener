@@ -11,6 +11,10 @@ mat-card-subtitle {
     font-size: 1.3rem;
 }
 
+mat-form-field {
+    margin: .25rem 0;
+}
+
 @media screen and (max-width: 780px) {
     mat-card {
         width: 80%;
