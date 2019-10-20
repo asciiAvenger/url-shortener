@@ -1,8 +1,7 @@
 export class Url {
 
-    id: number;
-    url: string;
-    timeout: number;
-    message: string;
+    constructor(public url: string, public timeout: number, public message: string, public id: number = null) {
+
+    }
 
 }
