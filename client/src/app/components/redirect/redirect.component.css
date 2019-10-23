@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap');
+
+.wrapper {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+mat-icon {
+    font-size: 2rem;
+}
+
+p, h1 {
+    color: white;
+}
+
+.pre-title {
+    font-size: 1.5rem;
+    letter-spacing: .15rem;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: .5rem;
+}
+
+.made-by {
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+.name {
+    font-family: 'Major Mono Display', monospace;
+    text-decoration: underline;
+    color: #ff4081;
+}
+
+.redirect-to {
+    margin-top: 5rem;
+}

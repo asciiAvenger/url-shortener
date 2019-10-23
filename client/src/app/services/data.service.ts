@@ -10,7 +10,12 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   createShortUrl(url: Url) {
+    let id: number;
     this.http.post('/api', url).subscribe(res => console.log(res));
+  }
+
+  getUrl(id: number) {
+    return this.http.get<Url>(`/api/${id}`);
   }
 
 }

@@ -14,6 +14,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NavComponent } from './components/nav/nav.component';
 import { UrlShortenerComponent } from './components/url-shortener/url-shortener.component';
 import { PathNotFoundComponent } from './components/path-not-found/path-not-found.component';
+import { SuccessComponent } from './components/success/success.component';
+import { RedirectComponent } from './components/redirect/redirect.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +28,14 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'success',
+    component: SuccessComponent
+  },
+  {
+    path: ':id',
+    component: RedirectComponent
+  },
+  {
     path: '**',
     component: PathNotFoundComponent
   }
@@ -36,7 +46,9 @@ const appRoutes: Routes = [
     AppComponent,
     NavComponent,
     UrlShortenerComponent,
-    PathNotFoundComponent
+    PathNotFoundComponent,
+    SuccessComponent,
+    RedirectComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
