@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-success',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuccessComponent implements OnInit {
 
-  constructor() { }
+  id: number = 0;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.id = this.dataService.id;
+  }
+
+  getShortUrl() {
+    return `${window.location.host}/${this.id}`;
+  }
+
+  getProtocol() {
+    return window.location.protocol;
+  }
+
+  onClick() {
+
   }
 
 }

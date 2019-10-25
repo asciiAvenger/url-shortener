@@ -10,12 +10,16 @@ db.run('CREATE TABLE IF NOT EXISTS urls ( id INTEGER PRIMARY KEY, url VARCHAR(25
 app.use(express.json());
 // app.use(express.static(__dirname + '/client'));
 
+// inserts shortened url dataset into db and returns the id
 app.post('/api', (req, res) => {
     db.run('INSERT INTO urls (url, timeout, message) VALUES (?, ?, ?)', [req.body.url, req.body.timeout, req.body.message], err => {
         if (err) {
             res.json({success: false});
         } else {
-            res.json({success: true});
+            db.get('SELECT id from urls ORDER BY id DESC', [], (err, row) => {
+                const { id } = row;
+                res.json({success: true, id: id});
+            });
         }
     });
 });

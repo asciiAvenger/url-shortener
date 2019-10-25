@@ -1,1 +1,8 @@
-<p>success works!</p>
+<div class="wrapper">
+    <mat-icon color="accent">cloud_done</mat-icon>
+    <h1>success!</h1>
+    <h3>Your url has successfully been shortened</h3>
+    <p class="new-url-label">New shortened url:</p>
+    <p class="url"><a href="{{ getProtocol() }}//{{ getShortUrl() }}">{{ getShortUrl() }}</a></p>
+    <button mat-raised-button color="primary" (click)="onClick()">Copy to clipboard</button>
+</div>
