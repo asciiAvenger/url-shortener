@@ -9,11 +9,13 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+  // post new row to api
   createShortUrl(url: Url) {
     let id: number;
-    this.http.post('/api', url).subscribe(res => console.log(res));
+    return this.http.post('/api', url);
   }
 
+  // get row from api
   getUrl(id: number) {
     return this.http.get<Url>(`/api/${id}`);
   }

@@ -10,13 +10,20 @@ import { Url } from 'src/app/models/url';
 })
 export class RedirectComponent implements OnInit {
 
-  shortenedUrl: Url;
+  shortenedUrl: Url = new Url();
+
+  progressBarPercent: number = 100;
 
   constructor(private route: ActivatedRoute, private dataService: DataService) { }
 
   ngOnInit() {
+    // get the /:id and load the respective model
     const id = this.route.snapshot.params.id;
     this.dataService.getUrl(id).subscribe(url => this.shortenedUrl = url);
+  }
+
+  onCountdownFinished() {
+    // window.location.href = this.shortenedUrl.url;
   }
 
 }

@@ -37,3 +37,19 @@ h1 {
 .redirect-to {
     margin-top: 5rem;
 }
+
+.redirect-link {
+    font-size: 1.4rem;
+    word-wrap: break-word;
+    color: #3f51b5;
+}
+
+blockquote {
+    color: white;
+    padding-left: 2rem;
+    border-left: .5rem solid #ff4081;
+    border-radius: .25rem;
+    width: fit-content;
+    text-align: left;
+    margin: auto;
+}

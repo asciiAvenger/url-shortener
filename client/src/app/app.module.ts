@@ -8,7 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSliderModule, MatSelectModule, MatCardModule, MatDividerModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule, MatCardModule, MatDividerModule, MatProgressBarModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { NavComponent } from './components/nav/nav.component';
@@ -16,6 +16,7 @@ import { UrlShortenerComponent } from './components/url-shortener/url-shortener.
 import { PathNotFoundComponent } from './components/path-not-found/path-not-found.component';
 import { SuccessComponent } from './components/success/success.component';
 import { RedirectComponent } from './components/redirect/redirect.component';
+import { CountdownComponent } from './components/countdown/countdown.component';
 
 const appRoutes: Routes = [
   {
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
     UrlShortenerComponent,
     PathNotFoundComponent,
     SuccessComponent,
-    RedirectComponent
+    RedirectComponent,
+    CountdownComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -66,7 +68,8 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatSelectModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

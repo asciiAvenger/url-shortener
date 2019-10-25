@@ -4,5 +4,8 @@
     <h1>url-shortener</h1>
     <p class="made-by">made by <a href="https://philipp-alber.tech" target="_blank" class="name">Philipp AlbeR</a></p>
     <p class="redirect-to">redirecting to...</p>
-    <p>{{ shortenedUrl.url }}</p>
+    <p class="redirect-link">{{ shortenedUrl.url }}</p>
+    <p>message...</p>
+    <blockquote>{{ shortenedUrl.message }}</blockquote>
+    <app-countdown [timeout]="shortenedUrl.timeout" (finished)="onCountdownFinished()"></app-countdown>
 </div>
