@@ -29,10 +29,10 @@ mat-toolbar mat-divider {
     z-index: 5;
     position: fixed;
     width: 250px;
-    height: calc(100vh - 56px);
+    height: calc(100vh - 64px);
     padding: 2rem 0;
     background-color: black;
-    top: 56px;
+    top: 64px;
     right: -250px;
     transition: right .5s ease-in-out;
 }
@@ -61,5 +61,12 @@ mat-toolbar mat-divider {
 
     .sidenav {
         display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sidenav {
+        top: 56px;
+        height: calc(100vh - 56px);
     }
 }
