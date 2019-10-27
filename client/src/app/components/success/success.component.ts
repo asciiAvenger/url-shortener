@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -10,6 +10,8 @@ export class SuccessComponent implements OnInit {
 
   id: number = 0;
 
+  @ViewChild('urlInput', {static: false}) input: ElementRef;
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
@@ -17,15 +19,12 @@ export class SuccessComponent implements OnInit {
   }
 
   getShortUrl() {
-    return `${window.location.host}/${this.id}`;
-  }
-
-  getProtocol() {
-    return window.location.protocol;
+    return `${window.location.protocol}//${window.location.host}/${this.id}`;
   }
 
   onClick() {
-
+    this.input.nativeElement.select();
+    document.execCommand('copy');
   }
 
 }

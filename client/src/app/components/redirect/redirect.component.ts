@@ -23,7 +23,7 @@ export class RedirectComponent implements OnInit {
   }
 
   onCountdownFinished() {
-    // window.location.href = this.shortenedUrl.url;
+    window.location.href = this.shortenedUrl.url;
   }
 
 }

@@ -2,7 +2,20 @@
     <mat-icon color="accent">cloud_done</mat-icon>
     <h1>success!</h1>
     <h3>Your url has successfully been shortened</h3>
-    <p class="new-url-label">New shortened url:</p>
-    <p class="url"><a href="{{ getProtocol() }}//{{ getShortUrl() }}">{{ getShortUrl() }}</a></p>
-    <button mat-raised-button color="primary" (click)="onClick()">Copy to clipboard</button>
+
+    <mat-card>
+        <mat-card-title>
+            New shortened URL
+        </mat-card-title>
+
+        <mat-card-content>
+            <mat-form-field>
+                <input #urlInput matInput readonly type="text" [value]="getShortUrl()">
+            </mat-form-field>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="onClick()">Copy to clipboard</button>
+        </mat-card-actions>
+    </mat-card>
 </div>
