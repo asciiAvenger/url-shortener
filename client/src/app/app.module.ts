@@ -17,6 +17,7 @@ import { PathNotFoundComponent } from './components/path-not-found/path-not-foun
 import { SuccessComponent } from './components/success/success.component';
 import { RedirectComponent } from './components/redirect/redirect.component';
 import { CountdownComponent } from './components/countdown/countdown.component';
+import { AboutComponent } from './components/about/about.component';
 
 const appRoutes: Routes = [
   {
@@ -31,6 +32,10 @@ const appRoutes: Routes = [
   {
     path: 'success',
     component: SuccessComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
   {
     path: ':id',
@@ -50,7 +55,8 @@ const appRoutes: Routes = [
     PathNotFoundComponent,
     SuccessComponent,
     RedirectComponent,
-    CountdownComponent
+    CountdownComponent,
+    AboutComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
