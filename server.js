@@ -8,7 +8,7 @@ const db = new sqlite3.Database('./database.db');
 db.run('CREATE TABLE IF NOT EXISTS urls ( id INTEGER PRIMARY KEY, url VARCHAR(255) NOT NULL, timeout SMALLINT NOT NULL, message VARCHAR(255) )');
 
 app.use(express.json());
-// app.use(express.static(__dirname + '/client'));
+app.use(express.static(__dirname + '/client/dist/client'));
 
 // inserts shortened url dataset into db and returns the id
 app.post('/api', (req, res) => {
@@ -38,6 +38,10 @@ app.get('/api/:id', (req, res) => {
             res.json(row);
         }
     });
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(__dirname + '/client/dist/client/index.html');
 });
 
 app.listen(process.env.PORT || 3000, () => console.log(`app listening on port ${process.env.PORT}`));
